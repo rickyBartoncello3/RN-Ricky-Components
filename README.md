@@ -1,79 +1,98 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# RN Components
 
-# Getting Started
+A **React Native** showcase app built with TypeScript that demonstrates a wide range of native UI components, animations, navigation patterns, and theming. The project is structured following a clean presentation-layer architecture and uses [React Navigation](https://reactnavigation.org/) for screen management.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Tech Stack
 
-## Step 1: Start the Metro Server
+- **React Native** 0.73.2
+- **TypeScript** 5.0
+- **React Navigation** (Stack) 6.x
+- **React Native Vector Icons** 10.x
+- **React Native Gesture Handler**
+- **React Native Safe Area Context**
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Screens & Features
 
-To start Metro, run the following command from the _root_ of your React Native project:
+| Screen | Description |
+|---|---|
+| `HomeScreen` | Entry point — menu listing all demo screens |
+| `Animation101Screen` | Basic animation with `Animated` API |
+| `Animation102Screen` | Advanced animation sequences |
+| `SwitchScreen` | Custom switch / toggle components |
+| `AlertScreen` | Native and custom alert dialogs |
+| `TextInputScreen` | Controlled text input examples |
+| `PullToRefreshScreen` | Pull-to-refresh list pattern |
+| `CustomSectionListScreen` | `SectionList` with custom headers |
+| `ModalScreen` | Modal presentation patterns |
+| `InfiniteScrollScreen` | Paginated / infinite scroll list |
+| `SlidesScreen` | Onboarding-style slide carousel |
+| `ChangeThemeScreen` | Light / dark theme switching |
+
+## Project Structure
+
+```
+src/
+├── config/
+│   ├── adapters/          # Utility adapters (e.g. prompt)
+│   └── theme/             # Theme definitions
+└── presentation/
+    ├── assets/            # Images and static assets
+    ├── components/ui/     # Reusable UI components (Button, Card, Title, …)
+    ├── context/           # ThemeContext
+    ├── hooks/             # Custom hooks (useAnimation, …)
+    ├── icons/             # Icon wrappers
+    ├── navigator/         # Stack navigator
+    └── screens/           # Feature screens
+```
+
+## Getting Started
+
+> Make sure you have completed the [React Native Environment Setup](https://reactnative.dev/docs/environment-setup) before proceeding.
+
+### Install dependencies
 
 ```bash
-# using npm
+npm install
+```
+
+### iOS — install pods
+
+```bash
+npx pod-install
+```
+
+### Start Metro
+
+```bash
 npm start
-
-# OR using Yarn
-yarn start
 ```
 
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
+### Run on device / simulator
 
 ```bash
-# using npm
-npm run android
+# iOS (iPhone 15 Pro Max simulator)
+npm run start:ios
 
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
+# iOS (default simulator)
 npm run ios
 
-# OR using Yarn
-yarn ios
+# Android
+npm run android
 ```
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+## Scripts
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+| Command | Description |
+|---|---|
+| `npm start` | Start the Metro bundler |
+| `npm run ios` | Build & run on iOS |
+| `npm run start:ios` | Build & run on iPhone 15 Pro Max simulator |
+| `npm run android` | Build & run on Android |
+| `npm run lint` | Run ESLint |
+| `npm test` | Run Jest test suite |
 
-## Step 3: Modifying your App
+## Requirements
 
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- Node.js >= 18
+- Xcode (for iOS builds)
+- Android Studio (for Android builds)
