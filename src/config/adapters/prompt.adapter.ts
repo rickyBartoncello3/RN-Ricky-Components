@@ -23,16 +23,10 @@ export const showPrompt = ({
   placeholder,
   defaulValue,
 }: Options) => {
-
-  prompt(
-    title,
-    subTitle,
-    buttons,
-    {
-      type: promptType,
-      cancelable: false,
-      defaultValue: defaulValue,
-      placeholder: placeholder,
-    },
-  );
+  prompt(title, subTitle, buttons, {
+    type: promptType,
+    cancelable: false,
+    defaultValue: defaulValue,
+    placeholder: placeholder,
+  });
 };

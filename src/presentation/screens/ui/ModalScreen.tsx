@@ -3,10 +3,10 @@ import {CustomView} from '../../components/ui/CustomView';
 import {Title} from '../../components/ui/Title';
 import {Button} from '../../components/ui/Button';
 import {useContext, useState} from 'react';
-import { ThemeContext } from '../../context/ThemeContext';
+import {ThemeContext} from '../../context/ThemeContext';
 
 export const ModalScreen = () => {
-  const { colors } = useContext( ThemeContext );
+  const {colors} = useContext(ThemeContext);
   const [isVisible, setIsVisible] = useState(false);
 
   return (
@@ -21,24 +21,20 @@ export const ModalScreen = () => {
             flex: 1,
             backgroundColor: colors.background,
           }}>
-          
           <View style={{paddingHorizontal: 10}}>
             <Title text="Modal Content" safe />
           </View>
 
-          <View style={{ flex: 1 }} />
+          <View style={{flex: 1}} />
 
-          <Button 
+          <Button
             text="Cerrar Modal"
-            onPress={ () => setIsVisible(false) }
+            onPress={() => setIsVisible(false)}
             styles={{
               height: Platform.OS === 'android' ? 40 : 60,
               borderRadius: 0,
             }}
           />
-
-
-
         </View>
       </Modal>
     </CustomView>

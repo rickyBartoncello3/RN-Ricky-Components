@@ -21,7 +21,7 @@ export const TextInputScreen = () => {
 
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : undefined }>
+      behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
       <ScrollView>
         <CustomView margin>
           <Title text="Text Inputs" safe />
@@ -68,7 +68,7 @@ export const TextInputScreen = () => {
             <Text>{JSON.stringify(form, null, 2)}</Text>
           </Card>
 
-          <View style={{ height: 20 }} />
+          <View style={{height: 20}} />
 
           <Card>
             <TextInput
@@ -80,8 +80,7 @@ export const TextInputScreen = () => {
           </Card>
         </CustomView>
 
-          <View style={{ height: 20 }} />
-
+        <View style={{height: 20}} />
       </ScrollView>
     </KeyboardAvoidingView>
   );

@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import {StyleSheet} from 'react-native';
 
 export interface ThemeColors {
   primary: string;
@@ -9,21 +9,21 @@ export interface ThemeColors {
 }
 
 export const colors: ThemeColors = {
-  primary: "#5856D6",
-  text: "black",
+  primary: '#5856D6',
+  text: 'black',
 
-  background: "#F3F2F7",
-  cardBackground: "white",
-  buttonTextColor: "white",
+  background: '#F3F2F7',
+  cardBackground: 'white',
+  buttonTextColor: 'white',
 };
 
 export const lightColors: ThemeColors = {
-  primary: "#5856D6",
-  text: "black",
+  primary: '#5856D6',
+  text: 'black',
 
-  background: "#F3F2F7",
-  cardBackground: "white",
-  buttonTextColor: "white",
+  background: '#F3F2F7',
+  cardBackground: 'white',
+  buttonTextColor: 'white',
 };
 
 export const darkColors: ThemeColors = {
@@ -33,20 +33,17 @@ export const darkColors: ThemeColors = {
   background: '#090909',
   cardBackground: '#2d2d2d',
   buttonTextColor: 'white',
-}
-
-
-
+};
 
 export const globalStyles = StyleSheet.create({
   title: {
     fontSize: 30,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     // color: colors.text,
   },
   subTitle: {
     fontSize: 20,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     // color: colors.text,
   },
 
@@ -73,7 +70,7 @@ export const globalStyles = StyleSheet.create({
     // backgroundColor: colors.primary,
     borderRadius: 10,
     padding: 10,
-    alignItems: "center",
+    alignItems: 'center',
   },
   btnPrimaryText: {
     // color: colors.text,

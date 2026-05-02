@@ -11,8 +11,8 @@ import {globalStyles} from '../../../config/theme/theme';
 import {FlatList} from 'react-native-gesture-handler';
 import {Button} from '../../components/ui/Button';
 import {useContext, useRef, useState} from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { ThemeContext } from '../../context/ThemeContext';
+import {useNavigation} from '@react-navigation/native';
+import {ThemeContext} from '../../context/ThemeContext';
 
 interface Slide {
   title: string;
@@ -39,9 +39,8 @@ const items: Slide[] = [
 ];
 
 export const SlidesScreen = () => {
+  const {colors} = useContext(ThemeContext);
 
-  const { colors } = useContext(ThemeContext);
-  
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const flatListRef = useRef<FlatList>(null);
   const navigation = useNavigation();
@@ -54,13 +53,12 @@ export const SlidesScreen = () => {
   };
 
   const scrollToSlide = (index: number) => {
-    if ( !flatListRef.current ) return;
+    if (!flatListRef.current) return;
 
-    flatListRef.current.scrollToIndex({ 
+    flatListRef.current.scrollToIndex({
       index: index,
       animated: true,
     });
-
   };
 
   return (
@@ -76,14 +74,14 @@ export const SlidesScreen = () => {
         renderItem={({item}) => <SlideItem item={item} />}
         horizontal
         pagingEnabled
-        scrollEnabled={ false }
+        scrollEnabled={false}
         onScroll={onScroll}
       />
 
       {currentSlideIndex === items.length - 1 ? (
         <Button
           text="Finalizar"
-          onPress={() =>  navigation.goBack() }
+          onPress={() => navigation.goBack()}
           styles={{position: 'absolute', bottom: 60, right: 30, width: 100}}
         />
       ) : (
@@ -102,8 +100,7 @@ interface SlideItemProps {
 }
 
 const SlideItem = ({item}: SlideItemProps) => {
-
-  const { colors } = useContext(ThemeContext);
+  const {colors} = useContext(ThemeContext);
   const {width} = useWindowDimensions();
   const {title, desc, img} = item;
 

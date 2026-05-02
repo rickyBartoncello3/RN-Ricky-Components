@@ -1,7 +1,11 @@
 import {PropsWithChildren, createContext, useEffect, useState} from 'react';
 import {ThemeColors, darkColors, lightColors} from '../../config/theme/theme';
 import {AppState, Appearance, useColorScheme} from 'react-native';
-import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
+import {
+  DarkTheme,
+  DefaultTheme,
+  NavigationContainer,
+} from '@react-navigation/native';
 
 type ThemeColor = 'light' | 'dark';
 
@@ -21,7 +25,6 @@ export const ThemeProvider = ({children}: PropsWithChildren) => {
 
   const isDark = currentTheme === 'dark';
   const colors = isDark ? darkColors : lightColors;
-
 
   useEffect(() => {
     if (colorScheme === 'dark') {

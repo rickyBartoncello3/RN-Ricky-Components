@@ -13,20 +13,20 @@ A **React Native** showcase app built with TypeScript that demonstrates a wide r
 
 ## Screens & Features
 
-| Screen | Description |
-|---|---|
-| `HomeScreen` | Entry point — menu listing all demo screens |
-| `Animation101Screen` | Basic animation with `Animated` API |
-| `Animation102Screen` | Advanced animation sequences |
-| `SwitchScreen` | Custom switch / toggle components |
-| `AlertScreen` | Native and custom alert dialogs |
-| `TextInputScreen` | Controlled text input examples |
-| `PullToRefreshScreen` | Pull-to-refresh list pattern |
-| `CustomSectionListScreen` | `SectionList` with custom headers |
-| `ModalScreen` | Modal presentation patterns |
-| `InfiniteScrollScreen` | Paginated / infinite scroll list |
-| `SlidesScreen` | Onboarding-style slide carousel |
-| `ChangeThemeScreen` | Light / dark theme switching |
+| Screen                    | Description                                 |
+| ------------------------- | ------------------------------------------- |
+| `HomeScreen`              | Entry point — menu listing all demo screens |
+| `Animation101Screen`      | Basic animation with `Animated` API         |
+| `Animation102Screen`      | Advanced animation sequences                |
+| `SwitchScreen`            | Custom switch / toggle components           |
+| `AlertScreen`             | Native and custom alert dialogs             |
+| `TextInputScreen`         | Controlled text input examples              |
+| `PullToRefreshScreen`     | Pull-to-refresh list pattern                |
+| `CustomSectionListScreen` | `SectionList` with custom headers           |
+| `ModalScreen`             | Modal presentation patterns                 |
+| `InfiniteScrollScreen`    | Paginated / infinite scroll list            |
+| `SlidesScreen`            | Onboarding-style slide carousel             |
+| `ChangeThemeScreen`       | Light / dark theme switching                |
 
 ## Project Structure
 
@@ -82,14 +82,14 @@ npm run android
 
 ## Scripts
 
-| Command | Description |
-|---|---|
-| `npm start` | Start the Metro bundler |
-| `npm run ios` | Build & run on iOS |
+| Command             | Description                                |
+| ------------------- | ------------------------------------------ |
+| `npm start`         | Start the Metro bundler                    |
+| `npm run ios`       | Build & run on iOS                         |
 | `npm run start:ios` | Build & run on iPhone 15 Pro Max simulator |
-| `npm run android` | Build & run on Android |
-| `npm run lint` | Run ESLint |
-| `npm test` | Run Jest test suite |
+| `npm run android`   | Build & run on Android                     |
+| `npm run lint`      | Run ESLint                                 |
+| `npm test`          | Run Jest test suite                        |
 
 ## Requirements
 
