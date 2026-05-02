@@ -13,6 +13,7 @@ import {SlidesScreen} from '../../r.presentation/screens/ui/SlidesScreen.tsx';
 import {ChangeThemeScreen} from '../../r.presentation/screens/theme/ChangeThemeScreen.tsx';
 import {useContext} from 'react';
 import {ThemeContext} from '../../r.presentation/context/ThemeContext.tsx';
+import BottomTabs from './BottomTabs.tsx';
 
 const Stack = createStackNavigator();
 
@@ -21,12 +22,18 @@ export const RootNavigator = () => {
 
   return (
     <Stack.Navigator
+      initialRouteName={'root'}
       screenOptions={{
         headerShown: false,
         cardStyle: {
           backgroundColor: colors.background,
         },
       }}>
+      <Stack.Screen
+        options={{headerShown: false}}
+        name={'root'}
+        component={BottomTabs}
+      />
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
       <Stack.Screen name="Animation101Screen" component={Animation101Screen} />
       <Stack.Screen name="Animation102Screen" component={Animation102Screen} />
