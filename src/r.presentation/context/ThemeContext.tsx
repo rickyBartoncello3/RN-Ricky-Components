@@ -1,8 +1,9 @@
 import {PropsWithChildren, createContext, useEffect, useState} from 'react';
 import {
   ThemeColors,
-  darkColors,
-  lightColors,
+  darkTheme,
+  lightTheme,
+  AppTheme,
 } from '../../shared/theme/theme.tsx';
 import {useColorScheme} from 'react-native';
 import {
@@ -11,46 +12,31 @@ import {
   NavigationContainer,
 } from '@react-navigation/native';
 
-type ThemeColor = 'light' | 'dark';
-
 interface ThemeContextProps {
-  currentTheme: ThemeColor;
+  currentTheme: AppTheme;
   colors: ThemeColors;
   isDark: boolean;
-
-  setTheme: (theme: ThemeColor) => void;
+  setTheme: (theme: AppTheme) => void;
 }
 
 export const ThemeContext = createContext({} as ThemeContextProps);
 
 export const ThemeProvider = ({children}: PropsWithChildren) => {
   const colorScheme = useColorScheme();
-  const [currentTheme, setCurrentTheme] = useState<ThemeColor>('light');
+  const [currentTheme, setCurrentTheme] = useState<AppTheme>(lightTheme);
 
-  const isDark = currentTheme === 'dark';
-  const colors = isDark ? darkColors : lightColors;
+  const isDark = currentTheme === darkTheme;
+  const colors = isDark ? darkTheme.colors : lightTheme.colors;
 
   useEffect(() => {
     if (colorScheme === 'dark') {
-      setCurrentTheme('dark');
+      setCurrentTheme(darkTheme);
     } else {
-      setCurrentTheme('light');
+      setCurrentTheme(lightTheme);
     }
   }, [colorScheme]);
 
-  // useEffect(() => {
-  //   const subscription = AppState.addEventListener('change', nextAppState => {
-  //     const colorScheme = Appearance.getColorScheme();
-  //     setCurrentTheme( colorScheme === 'dark' ? 'dark' : 'light')
-
-  //   });
-
-  //   return () => {
-  //     subscription.remove();
-  //   };
-  // }, []);
-
-  const setTheme = (theme: ThemeColor) => {
+  const setTheme = (theme: AppTheme) => {
     setCurrentTheme(theme);
   };
 
@@ -58,9 +44,9 @@ export const ThemeProvider = ({children}: PropsWithChildren) => {
     <NavigationContainer theme={isDark ? DarkTheme : DefaultTheme}>
       <ThemeContext.Provider
         value={{
-          currentTheme: currentTheme,
-          isDark: isDark,
-          colors: colors,
+          currentTheme,
+          isDark,
+          colors,
           setTheme: setTheme,
         }}>
         {children}

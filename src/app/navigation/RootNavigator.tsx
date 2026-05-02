@@ -14,6 +14,7 @@ import {ChangeThemeScreen} from '../../r.presentation/screens/theme/ChangeThemeS
 import {useContext} from 'react';
 import {ThemeContext} from '../../r.presentation/context/ThemeContext.tsx';
 import BottomTabs from './BottomTabs.tsx';
+import Routes from './routes.ts';
 
 const Stack = createStackNavigator();
 
@@ -22,7 +23,7 @@ export const RootNavigator = () => {
 
   return (
     <Stack.Navigator
-      initialRouteName={'root'}
+      initialRouteName={Routes.ROOT}
       screenOptions={{
         headerShown: false,
         cardStyle: {
@@ -31,7 +32,7 @@ export const RootNavigator = () => {
       }}>
       <Stack.Screen
         options={{headerShown: false}}
-        name={'root'}
+        name={Routes.ROOT}
         component={BottomTabs}
       />
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
