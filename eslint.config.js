@@ -22,8 +22,8 @@ export default defineConfig([
     ignores: [
       '.eslintrc.js',
       '.prettierrc.js',
-      'eslint.config.js',
-      'metro.config.js',
+      'eslint.r.config.js',
+      'metro.r.config.js',
     ],
   },
   ...compat.extends('@react-native').map(({root: _root, ...cfg}) => cfg),

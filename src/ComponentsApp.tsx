@@ -1,12 +1,12 @@
 import 'react-native-gesture-handler';
 
-import {Navigator} from './presentation/navigator/Navigator';
-import {ThemeProvider} from './presentation/context/ThemeContext';
+import {RootNavigator} from './app/navigation/RootNavigator.tsx';
+import {ThemeProvider} from './r.presentation/context/ThemeContext.tsx';
 
 export const ComponentsApp = () => {
   return (
     <ThemeProvider>
-      <Navigator />
+      <RootNavigator />
     </ThemeProvider>
   );
 };
