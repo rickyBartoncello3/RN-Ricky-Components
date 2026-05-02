@@ -1,4 +1,4 @@
-import {Text, View} from 'react-native';
+import {Text} from 'react-native';
 import {globalStyles} from '../../../config/theme/theme';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {useContext} from 'react';

@@ -1,4 +1,4 @@
-import {Pressable, StyleProp, Text, View, ViewStyle} from 'react-native';
+import {Pressable, StyleProp, Text, ViewStyle} from 'react-native';
 import {globalStyles} from '../../../config/theme/theme';
 import {useContext} from 'react';
 import {ThemeContext} from '../../context/ThemeContext';

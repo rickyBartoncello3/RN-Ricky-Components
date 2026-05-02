@@ -1,4 +1,4 @@
-import {Alert, Text, View} from 'react-native';
+import {Alert, View} from 'react-native';
 
 import {CustomView} from '../../components/ui/CustomView';
 import {Title} from '../../components/ui/Title';

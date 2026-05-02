@@ -1,4 +1,4 @@
-import {StyleProp, Text, View, ViewStyle} from 'react-native';
+import {StyleProp, View, ViewStyle} from 'react-native';
 import {globalStyles} from '../../../config/theme/theme';
 import {ReactNode, useContext} from 'react';
 import {ThemeContext} from '../../context/ThemeContext';

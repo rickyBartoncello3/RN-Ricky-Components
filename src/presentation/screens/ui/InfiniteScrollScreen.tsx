@@ -1,7 +1,5 @@
 import {useState} from 'react';
-import {ActivityIndicator, Image, Text, View} from 'react-native';
-import {CustomView} from '../../components/ui/CustomView';
-import {Title} from '../../components/ui/Title';
+import {ActivityIndicator, View} from 'react-native';
 import {FlatList} from 'react-native-gesture-handler';
 import {colors} from '../../../config/theme/theme';
 import {FadeInImage} from '../../components/ui/FadeInImage';

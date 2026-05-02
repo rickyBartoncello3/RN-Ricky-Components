@@ -1,5 +1,5 @@
 import {useRef} from 'react';
-import {Animated, PanResponder, StyleSheet, View} from 'react-native';
+import {Animated, PanResponder, StyleSheet} from 'react-native';
 import {CustomView} from '../../components/ui/CustomView';
 
 export const Animation102Screen = () => {

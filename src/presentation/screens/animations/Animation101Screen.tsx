@@ -1,4 +1,4 @@
-import {Animated, Easing, Pressable, StyleSheet, Text} from 'react-native';
+import {Animated, Easing, StyleSheet} from 'react-native';
 
 import {useAnimation} from '../../hooks/useAnimation';
 import {useContext} from 'react';

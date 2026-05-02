@@ -53,7 +53,7 @@ export const SlidesScreen = () => {
   };
 
   const scrollToSlide = (index: number) => {
-    if (!flatListRef.current) return;
+    if (!flatListRef.current) {return;}
 
     flatListRef.current.scrollToIndex({
       index: index,

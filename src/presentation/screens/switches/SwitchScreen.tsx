@@ -39,7 +39,7 @@ export const SwitchScreen = () => {
           text="¿Es feliz?"
         />
 
-        {/* 
+        {/*
         <Switch
           trackColor={{false: '#767577', true: '#81b0ff'}}
           thumbColor={isEnabled ? '#8316a4' : '#f4f3f4'}

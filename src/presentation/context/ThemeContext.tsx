@@ -1,6 +1,6 @@
 import {PropsWithChildren, createContext, useEffect, useState} from 'react';
 import {ThemeColors, darkColors, lightColors} from '../../config/theme/theme';
-import {AppState, Appearance, useColorScheme} from 'react-native';
+import {useColorScheme} from 'react-native';
 import {
   DarkTheme,
   DefaultTheme,
