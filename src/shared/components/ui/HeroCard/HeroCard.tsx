@@ -1,5 +1,3 @@
-// src/components/HeroCard/HeroCard.tsx
-
 import React, {useContext} from 'react';
 import {View} from 'react-native';
 import styles from './HeroCard.styles';

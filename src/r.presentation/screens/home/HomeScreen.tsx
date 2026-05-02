@@ -5,6 +5,7 @@ import {useContext} from 'react';
 import {ThemeContext} from '../../context/ThemeContext.tsx';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {HeroCard} from '../../../shared/components/ui/HeroCard/HeroCard.tsx';
+import {Highlights} from '../../../shared/components/ui/Highlight/Highlight.tsx';
 
 export const HomeScreen = () => {
   const {colors} = useContext(ThemeContext);
@@ -38,9 +39,12 @@ export const HomeScreen = () => {
             spent={420000}
             monthlyBudget={600000}
           />
-          <View>
-            <Text style={{color: colors.text}}>Home</Text>
-          </View>
+          <Highlights
+            weeklyPercentage={-12}
+            monthlyPercentage={8}
+            weeklyValues={[32000, 28000, 42000, 36000, 30000, 25000, 22000]}
+            monthlyValues={[360000, 390000, 410000, 420000]}
+          />
           <View>
             <Text style={{color: colors.text}}>Home</Text>
           </View>
