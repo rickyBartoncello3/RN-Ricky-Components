@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useRef} from 'react';
 import {View} from 'react-native';
 import styles from './TabBar.styles.ts';
 import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
@@ -7,9 +7,16 @@ import {TabBarIcon} from '../TabBarIcon/TabBarIcon.tsx';
 import {ThemeContext} from '../../../../r.presentation/context/ThemeContext.tsx';
 import Routes from '../../../../app/navigation/routes.ts';
 import TabBarAddButton from '../TabBarAddButton/TabBarAddButton.tsx';
+import {AddTransactionBottomSheet} from '../AddTransactionSheet/AddTransactionSheet.tsx';
+import {BottomSheetModal} from '@gorhom/bottom-sheet';
 
 const TabBar = ({state, descriptors, navigation}: BottomTabBarProps) => {
   const {currentTheme} = useContext(ThemeContext);
+  const addSheetRef = useRef<BottomSheetModal>(null);
+
+  const openAddSheet = () => {
+    addSheetRef.current?.present();
+  };
 
   return (
     <View
@@ -40,8 +47,9 @@ const TabBar = ({state, descriptors, navigation}: BottomTabBarProps) => {
             !event.defaultPrevented &&
             route.name !== Routes.ADD
           ) {
-            navigation.navigate(route.name, route.params);
+            return navigation.navigate(route.name, route.params);
           }
+          openAddSheet();
         };
 
         const onLongPress = () => {
@@ -52,7 +60,11 @@ const TabBar = ({state, descriptors, navigation}: BottomTabBarProps) => {
         };
 
         return route.name === Routes.ADD ? (
-          <TabBarAddButton isFocused={isFocused} children={undefined} />
+          <TabBarAddButton
+            isFocused={isFocused}
+            children={undefined}
+            onPress={onPress}
+          />
         ) : (
           <TabBarButton
             key={route.key}
@@ -74,14 +86,17 @@ const TabBar = ({state, descriptors, navigation}: BottomTabBarProps) => {
           />
         );
       })}
+      <AddTransactionBottomSheet
+        bottomSheetRef={addSheetRef}
+        onPressIncome={() => {
+          console.log('Navigate to Add Income');
+        }}
+        onPressExpense={() => {
+          console.log('Navigate to Add Expense');
+        }}
+      />
     </View>
   );
 };
 
 export default TabBar;
-
-/*
-
-
-*
-* */

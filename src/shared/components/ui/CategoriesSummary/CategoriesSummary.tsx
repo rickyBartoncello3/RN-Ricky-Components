@@ -23,7 +23,7 @@ export const CategoriesSummary = ({
 
   const visibleCategories = useMemo(
     () => (showAll ? categories : categories.slice(0, maxVisible)),
-    [showAll],
+    [showAll, categories, maxVisible],
   );
 
   const hiddenCategoriesCount = Math.max(categories.length - maxVisible, 0);

@@ -6,7 +6,6 @@ import {ThemeContext} from '../../context/ThemeContext.tsx';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {HeroCard} from '../../../shared/components/ui/HeroCard/HeroCard.tsx';
 import {Highlights} from '../../../shared/components/ui/Highlight/Highlight.tsx';
-import {Card} from '../../../shared/components/ui/Card/Card.tsx';
 import {AccountItem} from '../../../shared/components/ui/AccountsSummary/interfaces.ts';
 import {AccountsSummary} from '../../../shared/components/ui/AccountsSummary/AccountsSummary.tsx';
 import {getRandomInt} from '../../../shared/utils/getRandomInt.ts';
