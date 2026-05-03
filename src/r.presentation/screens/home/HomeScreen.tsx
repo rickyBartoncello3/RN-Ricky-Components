@@ -10,6 +10,8 @@ import {Card} from '../../../shared/components/ui/Card/Card.tsx';
 import {AccountItem} from '../../../shared/components/ui/AccountsSummary/interfaces.ts';
 import {AccountsSummary} from '../../../shared/components/ui/AccountsSummary/AccountsSummary.tsx';
 import {getRandomInt} from '../../../shared/utils/getRandomInt.ts';
+import {CategoriesSummary} from '../../../shared/components/ui/CategoriesSummary/CategoriesSummary.tsx';
+import {CategoryItem} from '../../../shared/components/ui/CategoriesSummary/interfaces.ts';
 
 export const HomeScreen = () => {
   const {colors} = useContext(ThemeContext);
@@ -17,6 +19,79 @@ export const HomeScreen = () => {
 
   const monthlyBudget = getRandomInt(0, 1000000);
   const spent = getRandomInt(0, monthlyBudget);
+
+  const categories: CategoryItem[] = [
+    {
+      id: 'food',
+      name: 'Comida',
+      amount: 120000,
+      percentage: 29,
+      color: '#22C55E',
+    },
+    {
+      id: 'transport',
+      name: 'Transporte',
+      amount: 75000,
+      percentage: 18,
+      color: '#2563EB',
+    },
+    {
+      id: 'home',
+      name: 'Casa',
+      amount: 60000,
+      percentage: 14,
+      color: '#FACC15',
+    },
+    {
+      id: 'outings',
+      name: 'Salidas',
+      amount: 45000,
+      percentage: 11,
+      color: '#F43F5E',
+    },
+    {
+      id: 'health',
+      name: 'Salud',
+      amount: 30000,
+      percentage: 7,
+      color: '#8B5CF6',
+    },
+    {
+      id: 'others',
+      name: 'Otros',
+      amount: 30000,
+      percentage: 7,
+      color: '#CBD5E1',
+    },
+    {
+      id: 'subscriptions',
+      name: 'Suscripciones',
+      amount: 25000,
+      percentage: 6,
+      color: '#FB923C',
+    },
+    {
+      id: 'shopping',
+      name: 'Compras',
+      amount: 20000,
+      percentage: 5,
+      color: '#06B6D4',
+    },
+    {
+      id: 'pets',
+      name: 'Mascotas',
+      amount: 10000,
+      percentage: 2,
+      color: '#A855F7',
+    },
+    {
+      id: 'travel',
+      name: 'Viajes',
+      amount: 5000,
+      percentage: 1,
+      color: '#64748B',
+    },
+  ];
 
   const accounts: AccountItem[] = [
     {
@@ -76,7 +151,7 @@ export const HomeScreen = () => {
             <Text style={{color: colors.text}}>Home</Text>
           </View>
         </View>
-        <View style={{gap: 8}}>
+        <View style={{gap: 8, marginBottom: 100}}>
           <HeroCard
             currentBalance={monthlyBudget - spent}
             spent={spent}
@@ -88,9 +163,16 @@ export const HomeScreen = () => {
             weeklyValues={[32000, 28000, 42000, 36000, 30000, 25000, 22000]}
             monthlyValues={[360000, 390000, 410000, 420000]}
           />
-          <Card>
-            <Text style={{color: colors.text}}>Home</Text>
-          </Card>
+          <CategoriesSummary
+            categories={categories}
+            maxVisible={6}
+            onPressShowMore={() => {
+              console.log('Mostrar todas las categorías');
+            }}
+            onPressCategory={category => {
+              console.log('Categoría seleccionada:', category.name);
+            }}
+          />
           <AccountsSummary
             accounts={accounts}
             mainCurrency="ARS"
