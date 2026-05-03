@@ -9,6 +9,7 @@ const fontSize = {
   regular_16: RFValue(16, standardHeight),
   x_regular_18: RFValue(18, standardHeight),
   xl_regular_20: RFValue(20, standardHeight),
+  xxl_regular_22: RFValue(22, standardHeight),
   large_24: RFValue(24, standardHeight),
   extraLarge_28: RFValue(28, standardHeight),
   extra_extra_large_32: RFValue(32, standardHeight),
@@ -21,6 +22,7 @@ const fontFamily = {
   Plus_Jakarta_Sans_600: 'System',
   Plus_Jakarta_Sans_700: 'System',
   Plus_Jakarta_Sans_800: 'System',
+  Plus_Jakarta_Sans_900: 'System',
 };
 
 export default {

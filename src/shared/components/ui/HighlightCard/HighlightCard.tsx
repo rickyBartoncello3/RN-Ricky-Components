@@ -19,17 +19,17 @@ export const HighlightCard = ({item}: HighlightCardProps) => {
 
   return (
     <Card>
-        <HighlightHeader item={item} />
-        <Text
-          size={20}
-          weight={800}
-          style={[
-            {
-              color: percentageColor,
-            },
-          ]}>
-          {getPercentageLabel(item.percentage)}
-        </Text>
+      <HighlightHeader item={item} />
+      <Text
+        size={20}
+        weight={800}
+        style={[
+          {
+            color: percentageColor,
+          },
+        ]}>
+        {getPercentageLabel(item.percentage)}
+      </Text>
     </Card>
   );
 };

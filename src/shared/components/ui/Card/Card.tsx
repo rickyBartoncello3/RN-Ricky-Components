@@ -17,9 +17,7 @@ export const Card = ({children}: CardProps) => {
           borderColor: colors.border,
         },
       ]}>
-      <RNCard.Content style={styles.content}>
-        {children}
-      </RNCard.Content>
+      <RNCard.Content style={styles.content}>{children}</RNCard.Content>
     </RNCard>
   );
 };

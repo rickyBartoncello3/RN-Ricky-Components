@@ -10,9 +10,10 @@ export const fontFamilyMap: {[key: number]: string} = {
   600: typography.fontFamily.Plus_Jakarta_Sans_600,
   700: typography.fontFamily.Plus_Jakarta_Sans_700,
   800: typography.fontFamily.Plus_Jakarta_Sans_800,
+  900: typography.fontFamily.Plus_Jakarta_Sans_800,
 };
 
-const fontSizeMap: {[key: number]: number} = {
+export const fontSizeMap: {[key: number]: number} = {
   8: typography.fontSize.xll_small_8,
   10: typography.fontSize.xl_small_10,
   12: typography.fontSize.x_small_12,
@@ -20,6 +21,7 @@ const fontSizeMap: {[key: number]: number} = {
   16: typography.fontSize.regular_16,
   18: typography.fontSize.x_regular_18,
   20: typography.fontSize.xl_regular_20,
+  22: typography.fontSize.xxl_regular_22,
   24: typography.fontSize.large_24,
   28: typography.fontSize.extraLarge_28,
   32: typography.fontSize.extra_extra_large_32,

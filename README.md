@@ -37,7 +37,7 @@ src/
 │   └── theme/             # Theme definitions
 └── presentation/
     ├── assets/            # Images and static assets
-    ├── components/ui/     # Reusable UI components (Button, Card, Title, …)
+    ├── components/ui/     # Reusable UI components (Button, AccountsSummary, Title, …)
     ├── context/           # ThemeContext
     ├── hooks/             # Custom hooks (useAnimation, …)
     ├── icons/             # Icon wrappers

@@ -8,6 +8,5 @@ export default StyleSheet.create({
   },
   content: {
     padding: 4,
-    alignItems: 'center',
   },
 });
