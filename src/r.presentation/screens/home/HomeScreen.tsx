@@ -1,7 +1,7 @@
 import {Text, View} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
 import {CustomView} from '../../../shared/components/ui/CustomView';
-import {useContext} from 'react';
+import {useContext, useEffect} from 'react';
 import {ThemeContext} from '../../context/ThemeContext.tsx';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import {HeroCard} from '../../../shared/components/ui/HeroCard/HeroCard.tsx';
@@ -11,10 +11,15 @@ import {AccountsSummary} from '../../../shared/components/ui/AccountsSummary/Acc
 import {getRandomInt} from '../../../shared/utils/getRandomInt.ts';
 import {CategoriesSummary} from '../../../shared/components/ui/CategoriesSummary/CategoriesSummary.tsx';
 import {CategoryItem} from '../../../shared/components/ui/CategoriesSummary/interfaces.ts';
+import {runDatabaseTest} from '../../../core/database/testDatabase.ts';
 
 export const HomeScreen = () => {
   const {colors} = useContext(ThemeContext);
   const {top} = useSafeAreaInsets();
+
+  useEffect(() => {
+    runDatabaseTest();
+  }, []);
 
   const monthlyBudget = getRandomInt(0, 1000000);
   const spent = getRandomInt(0, monthlyBudget);
